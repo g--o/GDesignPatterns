@@ -12,8 +12,8 @@ public final class Authenticator {
 	 * Dummy authentication
 	 * use whatever method you'd like
 	 */
-    public static boolean auth(String username, String password) // Authenticate
-    {
+	public static boolean Auth(String username, String password) // Authenticate
+	{
 		return (username.Equals("admin") && password.Equals("secret password"));
-    }
+	}
 }

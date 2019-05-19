@@ -9,34 +9,33 @@
  */
 public class ActiveUser extends User {
 
-    private static System system = null; // Our system instance
+	/**
+	 * action that is unique to authorized users
+	 */
+	public void action() {
+		system.privillegedAction();
+	}
+
+	/**
+	 * A static method for creating a new user.
+	 */
+	public static ActiveUser New(String username, String password)
+	{
+		system = System.login(username, password);
+
+		if(system == null)
+			return null;
+		else
+			return new ActiveUser(username);
+	}
 
 	/**
 	 * c'tor (private)
 	 */
-    private ActiveUser(String name)
-    {
-        super(name);
-    }
+	private ActiveUser(String name)
+	{
+		super(name);
+	}
 
-	/**
-	 * action that is unique to authorized users
-	 */
-    public void action() {
-        return system.privillegedAction();
-    }
-	
-	/**
-	 * A static method for creating a new user.
-	 */
-    public static ActiveUser New(String username, String password)
-    {
-        system = System.login(username, password);
-
-        if(system == null)
-            return null;
-        else
-            return new ActiveUser(username);
-    }
-
+	private static System system = null; // Our system instance
 }

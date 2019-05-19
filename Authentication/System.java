@@ -6,16 +6,16 @@
  */
 public final class System {
 
-    private final static System INSTANCE = new System(); // Singleton design pattern
+	private final static System INSTANCE = new System(); // Singleton design pattern
 
 	/**
 	 * action only an active (authorized) user can do
 	 */
 	public void privillegedAction()
-    {
-        // whatever action
-    }
-	
+	{
+		// whatever action
+	}
+
 	/**
 	 * action any user can do
 	 */
@@ -23,33 +23,32 @@ public final class System {
 	{
 		// whatever action
 	}
-	
+
 	/**
 	 * authorize
 	 */
-    public static System login(String username, String password) // Authenticate
-    {
+	public static System login(String username, String password) // Authenticate
+	{
 		if(Authenticator.Auth(username, password))
-            return getInstance();
-        else
-            return null;
-    }
+			return getInstance();
+		else
+			return null;
+	}
 
 	/**
 	 * c'tor
 	 * private (singleton)
 	 */
-    private System()
-    {
-		
-    }
+	private System()
+	{
+	}
 
 	/**
 	 * instance getter (singleton)
 	 */
-    private static System getInstance()
-    {
-        return INSTANCE;
-    }
+	private static System getInstance()
+	{
+		return INSTANCE;
+	}
 
 }
